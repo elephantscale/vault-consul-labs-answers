@@ -31,6 +31,7 @@
 vault -v
 ```
 * Your output should be similar to the following
+
 ![](../artwork/vault-version.png)
 
 ### Congrats! You completed the lab
