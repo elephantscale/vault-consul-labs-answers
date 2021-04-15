@@ -18,9 +18,11 @@
 
 * HashiCorp has excellent and most up-to-date documentation
 * Go here [https://www.vaultproject.io/downloads](https://www.vaultproject.io/downloads)
+* Here is a screenshot of what you should see
+
 ![](../artwork/download.png)
   
-* Chose the instructions for your OS
+* Chose the instructions for your OS and follow these instructions
 * (We tested on Ubuntu, Mac, and Windows)
 
 ### Step 2) Verify the install
