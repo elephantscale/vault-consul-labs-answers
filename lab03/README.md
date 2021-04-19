@@ -26,6 +26,7 @@ vault kv put secret/hello foo=world
 ```
 
 * You will see an output like this:
+
 ![](../artwork/write-secret.png)
   
 * This writes the pair foo=world to the path secret/hello. You'll learn paths in more detail later, but for now it is important that the path is prefixed with secret/, otherwise this example won't work. The secret/ prefix is where arbitrary secrets can be read and written.
@@ -59,6 +60,7 @@ vault kv put secret/hello foo=world excited=yes
 vault kv get secret/hello
 ```
 * Your output will look as follows
+
 ![](../artwork/read-secret.png)
   
 * Vault returns the latest version (in this case version 2) of the secrets at secret/hello.
