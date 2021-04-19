@@ -36,5 +36,18 @@ vault -v
 
 ![](../artwork/vault-version.png)
 
+### Step 3) Display vault commands
+
+* On the command line, run the following command
+
+```shell
+vault
+```
+
+* You should see this output
+
+![](../artwork/run-vault.png)
+
+
 ### Congrats! You completed the lab
 
