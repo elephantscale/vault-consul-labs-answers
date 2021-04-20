@@ -76,7 +76,7 @@ vault secrets list
 * NOTE:
 * The sys/ path corresponds to the system backend. These paths interact with Vault's core system and are not required for beginners.
 
-### Step 2) Write more data to the kv secrets engine
+### Step 3) Write more data to the kv secrets engine
 
 * Read and write some data to the new kv secrets engine enabled at kv/. Here are a few ideas to get started.
 
@@ -124,7 +124,7 @@ vault kv list kv/
 
 ![](../artwork/vault-empty.png)
 
-### Step 3) Disable a Secrets Engine
+### Step 4) Disable a Secrets Engine
 
 * When a secrets engine is no longer needed, it can be disabled. When a secrets engine is disabled, all secrets are revoked and the corresponding Vault data and configuration is removed.
 
@@ -136,7 +136,7 @@ vault secrets disable kv/
 
 * Any requests to route data to the original path would result in an error, but another secrets engine could now be enabled at that path.
 
-### Step 4) Summarize
+### Step 5) Summarize
 
 * So, what is a Secrets Engine? 
 
@@ -146,5 +146,5 @@ vault secrets disable kv/
 
 * This abstraction is incredibly powerful. It enables Vault to interface directly with physical systems, databases, HSMs, etc. But in addition to these physical systems, Vault can interact with more unique environments like AWS IAM, dynamic SQL user creation, etc. all while using the same read/write interface.
 
-### Step 5) Congratulation
+### Step 6) Congratulation
 
