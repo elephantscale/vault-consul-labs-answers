@@ -1,7 +1,7 @@
 # Dynamic Secrets
 
-* 
-* 
+* Static secret stay put and eventually become known
+* Dynamic secret are a much more secure way
 
 ## Lab Goals:
 
@@ -11,6 +11,7 @@
 * Previous labs
 
 ### Time:
+
     * 15 min
 
 * Now that you've experimented with the kv secrets engine, it is time to explore another feature of Vault: dynamic secrets.
