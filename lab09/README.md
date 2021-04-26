@@ -29,3 +29,57 @@ unset VAULT_TOKEN
 
 ### Step 2) Configuring Vault
 
+* Vault is configured using [HCL](https://github.com/hashicorp/hcl) files. 
+  The configuration file for Vault is relatively simple:
+  
+```HCL
+storage "raft" {
+  path    = "./vault/data"
+  node_id = "node1"
+}
+
+listener "tcp" {
+  address     = "127.0.0.1:8200"
+  tls_disable = "true"
+}
+
+api_addr = "http://127.0.0.1:8200"
+cluster_addr = "https://127.0.0.1:8201"
+ui = true
+```
+
+* **NOTE** Although the listener stanza disables TLS (tls_disable = "true") for this tutorial, Vault should always be used with TLS in production to provide secure communication between clients and the Vault server. It requires a certificate file and key file on each Vault host.
+
+* Within the configuration file, there are two primary configurations:
+
+  * `storage` - This is the physical backend that Vault uses for storage. Up to this point the dev server has used "inmem" (in memory), but the example above uses integrated storage (raft), a much more production-ready backend.
+
+  * `listener` - One or more listeners determine how Vault listens for API requests. The example above listens on localhost port 8200 without TLS. In your environment set VAULT_ADDR=http://127.0.0.1:8200 so the Vault client will connect without TLS.
+
+  * `api_addr` - Specifies the address to advertise to route client requests.
+
+  * `cluster_addr` - Indicates the address and port to be used for communication between the Vault nodes in a cluster.
+
+* For now, copy and paste the configuration above to a file called config.hcl.
+
+### Step 2) Starting the Server
+
+* The ./vault/data directory that raft storage backend uses must exist
+
+```shell
+ mkdir -p ./vault/data
+```
+  
+* Set the -config flag to point to the proper path where you saved the configuration above.
+
+```shell
+vault server -config=config.hcl
+```
+
+* The server should start:
+
+![](../artwork/fig9-1.png)
+
+
+
+
