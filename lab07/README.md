@@ -205,7 +205,7 @@ vault auth disable github
 
 ### Step 8) Congratulations!
 
-* Next, it would make sense to do the Authorization lab, to find out what you can do after you are authenticated
+* Next, it would make sense to do the Authorization (Policies) lab, to find out what you can do after you are authenticated
 
 
 
