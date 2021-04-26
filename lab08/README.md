@@ -12,7 +12,7 @@
 * [Install lab](../lab01)
 
 ### Time:
-    * 15 min
+    * 30 min
 
 ### Step 1) Inspect policy Format
 
