@@ -80,6 +80,14 @@ vault server -config=config.hcl
 
 ![](../artwork/fig9-1.png)
 
+* **NOTE**: If you get a warning message about mlock not being supported, that is okay. However, for maximum security you should run Vault on a system that supports mlock.
+
+* Vault outputs some information about its configuration, and then blocks. This process should be run using a resource manager such as systemd or upstart.
+
+* For potential problem if running on Linux, see [here](../note1.md)
+
+### Step 3) Initializing the Vault
+
 
 
 
