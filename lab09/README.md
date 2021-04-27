@@ -88,6 +88,44 @@ vault server -config=config.hcl
 
 ### Step 3) Initializing the Vault
 
+* Initialization is the process of configuring Vault. This only happens once when the server is started against a new backend that has never been used with Vault before. When running in HA mode, this happens once per cluster, not per server. During initialization, the encryption keys are generated, unseal keys are created, and the initial root token is setup.
+
+* Launch a new terminal session, and set VAULT_ADDR environment variable.
+
+```shell
+export VAULT_ADDR='http://127.0.0.1:8200'
+```
+
+* To initialize Vault use vault operator init. This is an unauthenticated request, but it only works on brand new Vaults without existing data:
+
+```shell
+vault operator init
+```
+
+* You will get this kind of output
+
+![](../artwork/fig9-2.png)
+
+* Initialization outputs two incredibly important pieces of information: the unseal keys and the initial root token. This is the only time ever that all of this data is known by Vault, and also the only time that the unseal keys should ever be so close together.
+
+* For the purpose of this lab, save all of these keys somewhere, and continue. In a real deployment scenario, you would never save these keys together. Instead, you would likely use Vault's PGP and Keybase.io support to encrypt each of these keys with the users' PGP keys. This prevents one single person from having all the unseal keys. 
+  Please see the documentation on using [PGP, GPG, and Keybase](https://www.vaultproject.io/docs/concepts/pgp-gpg-keybase) for more information.
+  
+* You will see the output like below - please read the notes
+
+### Step 3) Seal/Unseal
+
+* Every initialized Vault server starts in the sealed state. From the configuration, Vault can access the physical storage, but it can't read any of it because it doesn't know how to decrypt it. The process of teaching Vault how to decrypt the data is known as unsealing the Vault.
+
+* Unsealing has to happen every time Vault starts. It can be done via the API and via the command line. To unseal the Vault, you must have the threshold number of unseal keys. In the output above, notice that the "key threshold" is 3. This means that to unseal the Vault, you need 3 of the 5 keys that were generated.
+
+* **Note**: Vault does not store any of the unseal key shards. Vault uses an algorithm known as Shamir's Secret Sharing to split the master key into shards. Only with the threshold number of keys can it be reconstructed and your data finally accessed.
+
+* Begin unsealing the Vault:
+
+```shell
+vault operator unseal
+```
 
 
 
