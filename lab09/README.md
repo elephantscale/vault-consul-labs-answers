@@ -48,7 +48,7 @@ cluster_addr = "https://127.0.0.1:8201"
 ui = true
 ```
 
-* **NOTE** Although the listener stanza disables TLS (tls_disable = "true") for this tutorial, Vault should always be used with TLS in production to provide secure communication between clients and the Vault server. It requires a certificate file and key file on each Vault host.
+* **NOTE** Although the listener stanza disables TLS (tls_disable = "true") for this lab, Vault should always be used with TLS in production to provide secure communication between clients and the Vault server. It requires a certificate file and key file on each Vault host.
 
 * Within the configuration file, there are two primary configurations:
 
@@ -187,7 +187,7 @@ ps aux | grep "vault server" | grep -v grep | awk '{print $2}' | xargs kill
 
 ### Step 4) Congratulations!
 
-* You now know how to configure, initialize, and unseal/seal Vault. This is the basic knowledge necessary to deploy Vault into a real environment. Once the Vault is unsealed, you access it as you have throughout this getting started tutorial (which worked with an unsealed Vault).
+* You now know how to configure, initialize, and unseal/seal Vault. This is the basic knowledge necessary to deploy Vault into a real environment. Once the Vault is unsealed, you access it as you have throughout this getting started lab (which worked with an unsealed Vault).
 
 
 

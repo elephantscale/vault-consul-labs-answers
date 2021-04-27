@@ -5,7 +5,7 @@
 
 ## Lab Goals:
 
-* In this tutorial, you will start and interact with the Vault server running in development mode.
+* In this lab, you will start and interact with the Vault server running in development mode.
 
 ### Builds on:
 * [Install lab](../lab01)
