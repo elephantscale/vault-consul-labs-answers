@@ -149,5 +149,45 @@ vault operator unseal
 
 ![](../artwork/fig9-5.png)
 
+* When the value for Sealed changes to false, the Vault is unsealed.
+
+* Feel free to play around with entering invalid keys, keys in different orders, etc. in order to understand the unseal process.
+
+* Finally, authenticate as the initial root token (it was included in the output with the unseal keys):
+
+```shell
+vault login <Initial_Root_Token>
+```
+
+* In my case,
+
+```shell
+vault login s.XBs3MCqeN6FxeVXImD13bMrq
+```
+
+* You will be successfully authenticated
+
+![](../artwork/fig9-6.png)
+
+* As a root user, you can reseal the Vault with vault operator seal. A single operator is allowed to do this. This lets a single operator lock down the Vault in an emergency without consulting other operators.
+
+* When the Vault is sealed again, it clears all of its state (including the encryption key) from memory. The Vault is secure and locked down from access.
+
+### Step 3) Clean up
+
+* Either press Ctrl+C to stop the server.
+
+* Or, kill the Vault process from a command.
+
+```shell
+ps aux | grep "vault server" | grep -v grep | awk '{print $2}' | xargs kill
+```
+
+* Now, delete the ./vault/data directory which stores the encrypted Vault data.
+
+### Step 4) Congratulations!
+
+* You now know how to configure, initialize, and unseal/seal Vault. This is the basic knowledge necessary to deploy Vault into a real environment. Once the Vault is unsealed, you access it as you have throughout this getting started tutorial (which worked with an unsealed Vault).
+
 
 
