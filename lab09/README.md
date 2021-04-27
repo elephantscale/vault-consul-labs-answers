@@ -1,6 +1,6 @@
 # Deploy Vault
 
-* Deploy Vault in the ways you would do it in production
+* Deploy Vault in ways you would do it in production
 
 ## Lab Goals:
 
@@ -126,6 +126,28 @@ vault operator init
 ```shell
 vault operator unseal
 ```
+
+![](../artwork/fig9-3.png)
+
+* After pasting in a valid key and confirming, you see that Vault is still sealed, but progress is made. Vault knows it has 1 key out of 3. Due to the nature of the algorithm, Vault doesn't know if it has the correct key until the threshold is reached.
+
+* Also notice that the unseal process is stateful. You can go to another computer, use vault operator unseal, and as long as it's pointing to the same server, that other computer can continue the unseal process. This is incredibly important to the design of the unseal process: multiple people with multiple keys are required to unseal the Vault. The Vault can be unsealed from multiple computers and the keys should never be together. A single malicious operator does not have enough keys to be malicious.
+
+* Continue with vault operator unseal to complete unsealing the Vault. To unseal the vault you must use three different unseal keys, the same key repeated will not work.
+
+```shell
+vault operator unseal
+```
+
+![](../artwork/fig9-4.png)
+
+```shell
+vault operator unseal
+```
+
+* Unsealed!
+
+![](../artwork/fig9-5.png)
 
 
 
