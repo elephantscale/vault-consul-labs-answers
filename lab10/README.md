@@ -16,7 +16,7 @@
 
 ### Step 1) Prepare
   
-* Press Ctrl+C to terminate the dev server if you are running it at at http://127.0.0.1:8200 before proceeding.
+* Press Ctrl+C to terminate the dev server if you are running it at http://127.0.0.1:8200 before proceeding.
 
 * Machines that need access to information stored in Vault will most likely access Vault via its REST API. For example, if a machine were using AppRole for authentication, the application would first authenticate to Vault which would return a Vault API token. The application would use that token for future communication with Vault.
 
