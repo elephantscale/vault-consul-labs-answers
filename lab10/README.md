@@ -177,5 +177,106 @@ curl \
 
 ![](../artwork/fig10-5.png)
 
+* Please note that the response will include the role_id
 
+```json
+{
+  "role_id": "947ad068-6804-aea1-ce78-c97fcf4aab87"
+}
+```
+
+* The next command creates a new SecretID under the my-role.
+
+```shell
+curl \
+    --header "X-Vault-Token: $VAULT_TOKEN" \
+    --request POST \
+    http://127.0.0.1:8200/v1/auth/approle/role/my-role/secret-id | jq -r ".data"
+```
+
+![](../artwork/fig10-6.png)
+
+* Please note that the response will include the secret_id:
+
+```json
+{
+  "secret_id": "43a15ecd-4cba-4d50-3b3f-09b911c1cd4e",
+  "secret_id_accessor": "01ec1940-d95a-376f-a862-932049f79418",
+  "secret_id_ttl": 0
+}
+```
+
+* These two credentials can be supplied to the login endpoint to fetch a new Vault token.
+* Note that you will have to replace the role_id and secret_id with your values, the ones you got in doing this lab.
+
+```shell
+curl --request POST \
+       --data '{"role_id": "947ad068-6804-aea1-ce78-c97fcf4aab87", "secret_id": "43a15ecd-4cba-4d50-3b3f-09b911c1cd4e"}' \
+       http://127.0.0.1:8200/v1/auth/approle/login | jq -r ".auth"
+```
+
+* Then you will get an output like this
+
+![](../artwork/fig10-7.png)
+
+* The response will be JSON, under the key auth (which we show with the help of `jq` command:
+
+```json
+{
+  "client_token": "s.HluEtTApN8Bq3YyhsN0TA7Hd",
+  "accessor": "ES25bpPxLnrfQRjebY41r2Tc",
+  "policies": [
+    "default",
+    "my-policy"
+  ],
+  "token_policies": [
+    "default",
+    "my-policy"
+  ],
+  "metadata": {
+    "role_name": "my-role"
+  },
+  "lease_duration": 2764800,
+  "renewable": true,
+  "entity_id": "1d722878-35f9-56a4-dd9b-85ee336b54d0",
+  "token_type": "service",
+  "orphan": true
+}
+```
+
+The returned client token (`s.HluEtTApN8Bq3YyhsN0TA7Hd`) can be used to authenticate with Vault. This token will be authorized with specific capabilities on all the resources encompassed by the default and my-policy policies. (As it was mentioned in the Policies tutorial, the default policy is attached to all tokens by default. )
+
+The newly acquired token can be exported as the VAULT_TOKEN environment variable value and used to authenticate subsequent Vault requests.
+
+```shell
+export VAULT_TOKEN="s.HluEtTApN8Bq3YyhsN0TA7Hd"
+```
+
+* Create a version 1 of secret named creds with a key password and its value set to my-long-password.
+
+```shell
+curl \
+    --header "X-Vault-Token: $VAULT_TOKEN" \
+    --request POST \
+    --data '{ "data": {"password": "my-long-password"} }' \
+    http://127.0.0.1:8200/v1/secret/data/creds | jq -r ".data"
+```
+
+* Your output will look like this
+
+![](../artwork/fig10-8.png)
+
+### Step 4) Clean up
+
+* You can stop the server and unset the VAULT_TOKEN environment variable.
+
+```shell
+ unset VAULT_TOKEN
+```
+
+### Step 5) Congratulation! You completed the HTTP API lab. Thank you.
+
+* You can see the documentation on the [HTTP APIs](https://www.vaultproject.io/api) for more details on other available endpoints.
+
+* Congratulations! You now know all the basics needed to get started with Vault.
 
