@@ -20,7 +20,7 @@
 
 * The Vault UI is not activated by default. To activate the UI, set the ui configuration option in the Vault server configuration. Here is this section:
 
-```json
+```text
 ui = true
 
 listener "tcp" {
@@ -35,7 +35,7 @@ storage "storage" {
 * The UI runs on the same port as the Vault listener. As such, you must configure at least one listener stanza in order to access the UI.
 * Here is a section
 
-```json
+```text
 ui = true
 
 listener "tcp" {
