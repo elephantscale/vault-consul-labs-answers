@@ -6,8 +6,7 @@
   
 ## Lab Goals:
 
-*  
-*  
+* Talk to Vault using HTTP APIs
 
 ### Builds on:
 * [Install lab](../lab01)
@@ -219,7 +218,7 @@ curl --request POST \
 
 ![](../artwork/fig10-7.png)
 
-* The response will be JSON, under the key auth (which we show with the help of `jq` command:
+* The response will be JSON, under the key auth (which we show with the help of `jq` command):
 
 ```json
 {
