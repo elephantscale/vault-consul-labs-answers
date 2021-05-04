@@ -65,6 +65,11 @@ vault secrets list
 vault secrets list -detailed
 ```
 
+* Enable the key/value secrets engine v1 at kv-v1/.
+
+```shell
+vault secrets enable -path="kv-v1" kv
+```
 ### Step 4) Store the Google API key
 
 * Everything after the kv-v1 path is a key-value pair to write to the secrets engine. You can specify multiple values. If the value has a space, you need to surround it with quotes. Having keys with spaces is permitted, but strongly discouraged because it can lead to unexpected client-side behavior.
