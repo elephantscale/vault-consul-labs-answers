@@ -39,7 +39,7 @@ vault server -dev -dev-root-token-id root
 
 ![](../artwork/fig21-2.png)
 
-### Step 2) Export environmental variables
+### Step 2) Export environment variables
 
 ```shell
 export VAULT_ADDR=http://127.0.0.1:8200
