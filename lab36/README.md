@@ -1,7 +1,6 @@
 # Explore Consul UI
 
-* Once a static secret leaks out, it's not a secret any longer
-* Here, we store  dynamic secrets using Vault
+* https://learn.hashicorp.com/tutorials/consul/get-started-explore-the-ui?in=consul/getting-started
 
 ## Lab Goals:
 

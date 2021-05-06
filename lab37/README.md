@@ -1,7 +1,6 @@
 # Create a Local Consul Datacenter
 
-* Once a static secret leaks out, it's not a secret any longer
-* Here, we store  dynamic secrets using Vault
+* https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
 
 ## Lab Goals:
 

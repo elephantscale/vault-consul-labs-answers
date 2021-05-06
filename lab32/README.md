@@ -1,7 +1,6 @@
 # Consul agent
 
-* Once a static secret leaks out, it's not a secret any longer
-* Here, we store  dynamic secrets using Vault
+* https://learn.hashicorp.com/tutorials/consul/get-started-agent?in=consul/getting-started
 
 ## Lab Goals:
 
