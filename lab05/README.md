@@ -99,7 +99,7 @@ For example, here is an IAM policy that enables all actions on EC2, but not IAM 
 To do that, write to `aws/roles/:name` where `:name` is your unique name that describes the role 
 (such as `aws/roles/my-role`):
   
-* Run this command
+* Run this command (in Windows, you may need to rush the bash shell, such as comes with git install)
 
 ```shell
 vault write aws/roles/my-role \
