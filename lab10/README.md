@@ -25,7 +25,7 @@
 * Create a server configuration file, config.hcl.
 
 * For the purpose of this lab, you will use the following configuration which disables TLS and uses a file-based backend. TLS is disabled here only for example purposes; it should **never** be disabled in production.
-
+  (in Windows, you may need to rush the bash shell, such as comes with git install)
 ```shell
 tee config.hcl <<EOF
 storage "file" {

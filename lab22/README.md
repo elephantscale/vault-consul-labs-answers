@@ -155,7 +155,8 @@ vault write database/config/postgresql \
 
 * In configure Postgresql secrets engine step, you configured the PostgreSQL secrets engine with the allowed role named readonly. A role is a logical name within Vault that maps to database credentials. These credentials are expressed as SQL statements and assigned to the Vault role.
 
-* Define the SQL used to create credentials.
+* Define the SQL used to create credentials (in Windows, you may need to rush the bash shell, such as comes with git install).
+
 
 ```shell
 tee readonly.sql <<EOF
