@@ -157,6 +157,12 @@ vault lease revoke aws/creds/my-role/sZnJFxJ1TebJmzCcNdGzxXXD
 
 ![](../artwork/5-2.png)
 
+### Revoke all leases and delete the created IAM users
+
+```shell
+vault lease revoke -prefix aws/creds/my-role
+```
+
 ### Step 6: Congratulations!
 
 * Done! If you login to your AWS account, you will see that no IAM users exist. If you try to use the access keys that were generated, you will find that they no longer work.
