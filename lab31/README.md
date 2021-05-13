@@ -21,7 +21,7 @@
 
 ### Step 2) Verify the install
 
-```terraform
+```shell
 consul
 ```
 
