@@ -138,7 +138,9 @@ vault token create -policy=my-policy
 * Write a secret to the path secret/data/creds.
 
 ```shell
-VAULT_TOKEN=s.huGPd3TUqJWICUidDRWmq7ww vault kv put secret/creds password="my-long-password"
+VAULT_TOKEN=s.huGPd3TUqJWICUidDRWmq7ww 
+
+vault kv put secret/creds password="my-long-password"
 ```
 
 * Confirm success
