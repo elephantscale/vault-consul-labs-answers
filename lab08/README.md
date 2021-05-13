@@ -158,7 +158,9 @@ vault kv put secret/creds password="my-long-password"
 * Attempt to write to the secret/data/foo path.
 
 ```shell
-VAULT_TOKEN=s.huGPd3TUqJWICUidDRWmq7ww vault kv put secret/foo robot=beepboop
+VAULT_TOKEN=s.huGPd3TUqJWICUidDRWmq7ww 
+
+vault kv put secret/foo robot=beepboop
 ```
 
 * Indeed, you get an error
