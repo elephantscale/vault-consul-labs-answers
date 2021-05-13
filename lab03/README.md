@@ -47,7 +47,7 @@ vault kv put secret/hello foo=world excited=yes
 
 **WARNING**
 
-* The examples in this tutorial use the <key>=<value> input to send secrets to Vault. 
+* The examples in this lab use the <key>=<value> input to send secrets to Vault. 
   However, sending data as a part of the CLI command often end up in the shell history unencrypted. 
 * To avoid this, you should use files. 
   We will talk about it in the "Static Secrets: Key/Value Secrets Engine" lab.

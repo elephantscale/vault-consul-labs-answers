@@ -16,7 +16,7 @@
 ### Step 1) Starting the Dev Server
 
 * The dev server is a built-in, pre-configured server that is not very secure but useful for playing with Vault locally. 
-* Later, in the Deploy Vault tutorial, you will configure and start a non-dev server.
+* Later, in the "Deploy Vault" lab, you will configure and start a non-dev server.
 * Run the following command
 
 ```shell
