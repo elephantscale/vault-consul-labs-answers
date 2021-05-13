@@ -77,7 +77,7 @@ HTTP Options:
 And so on...      
 ```
 
-* Create the policy named my-policy with the contents from stdin (in Windows, you may need to rush the bash shell, such as comes with git install).
+* Create the policy named my-policy with the contents from stdin (in Windows, you may need to use the bash shell, such as comes with git install).
 
 ```shell
 vault policy write my-policy - << EOF
