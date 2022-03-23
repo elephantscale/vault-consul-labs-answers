@@ -25,6 +25,13 @@
 * Chose the instructions for your OS and follow these instructions
 * (We tested on Ubuntu, Mac, and Windows)
 
+### If you have an older Linux, you may have to do this
+```shell```
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com focal main"
+/usr/bin/vault -v
+```
+
 ### Step 2) Verify the install
 
 * On the command line, run the following command
