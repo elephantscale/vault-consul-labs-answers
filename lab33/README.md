@@ -1,6 +1,6 @@
-# Register service with Consul
+# Secure Service Communication with Consul Service Mesh and Envoy
 
-* https://learn.hashicorp.com/tutorials/consul/get-started-service-discovery?in=consul/getting-started
+* https://learn.hashicorp.com/tutorials/consul/service-mesh-with-envoy-proxy?in=consul/getting-started
 
 ## Lab Goals:
 

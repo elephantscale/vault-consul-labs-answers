@@ -1,7 +1,7 @@
-# Connect services with Consul service mesh
+# Store Data in Consul KV
 
-* https://learn.hashicorp.com/tutorials/consul/get-started-service-networking?in=consul/getting-started
-
+* https://learn.hashicorp.com/tutorials/consul/get-started-key-value-store?in=consul/getting-started
+* 
 ## Lab Goals:
 
 * 

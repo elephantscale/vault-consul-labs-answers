@@ -1,6 +1,6 @@
-# Explore Consul UI
+# Create a Local Consul Datacenter
 
-* https://learn.hashicorp.com/tutorials/consul/get-started-explore-the-ui?in=consul/getting-started
+* https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
 
 ## Lab Goals:
 

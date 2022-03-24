@@ -1,6 +1,6 @@
-# Store data in Consul KV
+# Explore the Consul UI
 
-* https://learn.hashicorp.com/tutorials/consul/get-started-key-value-store?in=consul/getting-started
+* https://learn.hashicorp.com/tutorials/consul/get-started-explore-the-ui?in=consul/getting-started
 
 ## Lab Goals:
 
