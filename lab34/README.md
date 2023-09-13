@@ -1,6 +1,6 @@
 # Store Data in Consul KV
 
-* []((https://developer.hashicorp.com/consul/tutorials/interactive/get-started-key-value-store)
+* https://developer.hashicorp.com/consul/tutorials/interactive/get-started-key-value-store
 * 
 ## Lab Goals:
 
