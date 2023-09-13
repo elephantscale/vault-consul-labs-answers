@@ -1,6 +1,6 @@
 # Secure Service Communication with Consul Service Mesh and Envoy
 
-* https://learn.hashicorp.com/tutorials/consul/service-mesh-with-envoy-proxy?in=consul/getting-started
+* https://developer.hashicorp.com/consul/tutorials/developer-mesh/service-mesh-with-envoy-proxy
 
 ## Lab Goals:
 
