@@ -1,6 +1,6 @@
 # Explore the Consul UI
 
-* https://learn.hashicorp.com/tutorials/consul/get-started-explore-the-ui?in=consul/getting-started
+* https://developer.hashicorp.com/consul/tutorials/certification-associate-tutorials/get-started-explore-the-ui
 
 ## Lab Goals:
 
